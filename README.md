@@ -3,7 +3,7 @@
 Proof of concept of using LangChain
 
 ## Project Requirements
-- Python 3.12
+- Python 3.11
 
 ## Installation
 
@@ -14,7 +14,7 @@ Proof of concept of using LangChain
 
 2. Upgrade pip to the latest version
 
-> pip install pip --upgrade
+> pip install --upgrade pip
 
 3. Install and init **poetry**
 
