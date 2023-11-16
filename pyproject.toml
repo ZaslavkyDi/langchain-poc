@@ -8,8 +8,42 @@ readme = "README.md"
 
 [tool.poetry.dependencies]
 python = "^3.11"
+requests = "^2.31.0"
+black = "^23.11.0"
+ruff = "^0.1.5"
+langchain = "^0.0.336"
+openai = "0.28.1"
 
 
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
+
+# Linters
+[tool.black]
+line-length = 100
+target-version = ['py311']
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+select = [
+    "I",  # isort
+    "C4", # flake8-comprehensions
+    "UP", # pyupgrade
+    "F",  # pyflakes
+    "E",  # pycodestyle
+    "TID",  # flake8-tidy-imports
+    "RUF", # ruff-internal
+    "C901", # mccabe
+]
+ignore = [
+    "E501",  # line too long, handled by black
+    "C401",  # generator syntax for sets vs always force set comprehension
+    "PLC0414",  # allow explicit re-exports using 'as' without forcing __all__
+    "RUF001", # allow CYRILLIC letter
+]
+
+    [tool.ruff.isort]
+    known-first-party = ["langchain_poc"]

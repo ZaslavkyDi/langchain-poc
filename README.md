@@ -4,8 +4,10 @@ Proof of concept of using LangChain
 
 ## Project Requirements
 - Python 3.11
+- langchain
+- openai = 0.23.1
 
-## Installation
+## Project Setup
 
 1. Create and activate **venv**
 
@@ -20,3 +22,5 @@ Proof of concept of using LangChain
 
 > - pip install poetry
 > - poetry install
+
+4. Create **.env** file from ****[example.local.env](example.local.env)**** and place it on the same level. Populate **OPENAI_API_KEY** variable.
