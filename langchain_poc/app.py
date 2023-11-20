@@ -13,7 +13,7 @@ def _get_intro_chat_prompts() -> IntroChatPrompts:
 
 def main() -> None:
     example = _get_intro_chat_prompts()
-    example.run_example()
+    example.run_example_with_prompt_template()
 
 
 if __name__ == "__main__":
