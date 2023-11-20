@@ -5,3 +5,6 @@ ruff:
 .PHONY: black
 black:
 	poetry run black .
+
+.PHONE: lint
+lint: black ruff
