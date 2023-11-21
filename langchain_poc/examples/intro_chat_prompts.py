@@ -1,20 +1,17 @@
 from typing import Any
 
 import openai
-from langchain.chat_models import ChatOpenAI
 from langchain.prompts import ChatPromptTemplate
 
+from langchain_poc.examples.base import BaseExample
 
-class IntroChatPrompts:
+
+class IntroChatPrompts(BaseExample):
     customer_review = """
     Your product is terrable! I don't know how you were able to get this to the market.
     I don't want this! Actually, no one should want this.
     Seriously! Give me my money!
     """
-
-    def __init__(self, llm_model: str, chat_model: ChatOpenAI) -> None:
-        self._llm_model = llm_model
-        self._chat_model = chat_model
 
     def get_completion(self, prompt: str) -> str:
         messages: list[dict[str, Any]] = [
@@ -24,7 +21,7 @@ class IntroChatPrompts:
             }
         ]
         response = openai.ChatCompletion.create(
-            model=self._llm_model,
+            model=self.llm_model,
             messages=messages,
             temperature=0,
         )
@@ -49,9 +46,8 @@ class IntroChatPrompts:
 
         prompt_template = ChatPromptTemplate.from_template(template=template_string)
         translation_message = prompt_template.format_messages(
-            customer_review=self.customer_review,
-            company_name="Google"
+            customer_review=self.customer_review, company_name="Google"
         )
 
-        response = self._chat_model(translation_message)
+        response = self.chat_model(translation_message)
         print(response.content)
