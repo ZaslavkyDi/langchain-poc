@@ -1,4 +1,3 @@
-import time
 
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
@@ -8,7 +7,6 @@ from langchain_poc.examples.base import BaseExample
 
 class BufferMemoryExample(BaseExample):
     def run_example(self) -> None:
-
         def show_that_llm_is_stateless() -> None:
             # check if ChatOpenAI remember the name 'Bob' - nope
             print(self.chat_model.predict("My name is Bob. What's yours?"))
