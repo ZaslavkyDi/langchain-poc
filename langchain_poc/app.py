@@ -1,7 +1,8 @@
 from langchain.chat_models import ChatOpenAI
 
 from langchain_poc.config import get_openai_settings
-from langchain_poc.examples.chains import ChainsExample
+from langchain_poc.examples.chains.chains import ChainsExample
+from langchain_poc.examples.chains.chains_story import ChainsStoryExample
 from langchain_poc.examples.intro_chat_prompts import IntroChatPrompts
 from langchain_poc.examples.lang_parser import LangParser
 from langchain_poc.examples.memory import BufferMemoryExample
@@ -26,8 +27,12 @@ def _get_chains() -> ChainsExample:
     return ChainsExample(chat_model=chat_model)
 
 
+def _get_chains_story() -> ChainsStoryExample:
+    return ChainsStoryExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_chains()
+    example = _get_chains_story()
     example.run_example()
 
 
