@@ -1,11 +1,11 @@
 from langchain.chat_models import ChatOpenAI
 
 from langchain_poc.config import get_openai_settings
-from langchain_poc.examples.chains.chains import ChainsExample
-from langchain_poc.examples.chains.chains_story import SequentialChainExample
-from langchain_poc.examples.intro_chat_prompts import IntroChatPrompts
-from langchain_poc.examples.lang_parser import LangParser
-from langchain_poc.examples.memory import BufferMemoryExample
+from langchain_poc.examples.langchain.chains import ChainsExample
+from langchain_poc.examples.langchain.chains import SequentialChainExample
+from langchain_poc.examples.langchain.intro_chat_prompts import IntroChatPrompts
+from langchain_poc.examples.langchain.lang_parser import LangParser
+from langchain_poc.examples.langchain.memory import BufferMemoryExample
 
 llm_model: str = "gpt-3.5-turbo"
 chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=llm_model)

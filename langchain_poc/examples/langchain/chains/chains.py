@@ -1,7 +1,7 @@
 from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 
-from langchain_poc.examples.base import BaseExample
+from langchain_poc.examples.langchain.base import BaseExample
 
 
 class ChainsExample(BaseExample):

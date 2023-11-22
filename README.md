@@ -5,7 +5,8 @@ Proof of concept of using LangChain
 ## Project Requirements
 - Python 3.11
 - langchain
-- openai = 0.23.1
+- openai
+- streamlit
 
 ## Project Setup
 

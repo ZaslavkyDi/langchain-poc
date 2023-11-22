@@ -3,7 +3,7 @@ from typing import Any
 import openai
 from langchain.prompts import ChatPromptTemplate
 
-from langchain_poc.examples.base import BaseExample
+from langchain_poc.examples.langchain.base import BaseExample
 
 
 class IntroChatPrompts(BaseExample):

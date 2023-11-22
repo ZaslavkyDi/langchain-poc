@@ -15,6 +15,7 @@ langchain = "^0.0.336"
 openai = "0.28.1"
 pydantic-settings = "^2.1.0"
 pydantic = "^2.5.1"
+streamlit = "^1.28.2"
 
 
 [build-system]

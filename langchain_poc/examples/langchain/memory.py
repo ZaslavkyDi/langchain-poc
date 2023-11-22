@@ -1,7 +1,7 @@
 from langchain.chains import ConversationChain
 from langchain.memory import ConversationBufferMemory
 
-from langchain_poc.examples.base import BaseExample
+from langchain_poc.examples.langchain.base import BaseExample
 
 
 class BufferMemoryExample(BaseExample):

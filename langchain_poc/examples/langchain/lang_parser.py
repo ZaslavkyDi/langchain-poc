@@ -3,7 +3,7 @@ from langchain.prompts import ChatPromptTemplate
 from langchain.schema import BaseMessage
 from pydantic import BaseModel, Field, field_validator
 
-from langchain_poc.examples.base import BaseExample
+from langchain_poc.examples.langchain.base import BaseExample
 
 
 class LangParser(BaseExample):
