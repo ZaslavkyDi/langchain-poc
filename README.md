@@ -3,6 +3,7 @@
 Proof of concept of using LangChain
 
 ## Project Requirements
+
 - Python 3.11
 - langchain
 - openai
@@ -24,9 +25,17 @@ Proof of concept of using LangChain
 > - pip install poetry
 > - poetry install
 
-4. Create **.env** file from ****[example.local.env](example.local.env)**** and place it on the same level. Populate **OPENAI_API_KEY** variable.
+4. Create **.env** file from ****[example.local.env](example.local.env)**** and place it on the same level. Populate *
+   *OPENAI_API_KEY** variable.
 
+## Run Apps
 
-## Run Streamlit Example App
+### Streamlit Example Web App
+
 To run Streamlit example app create run next command.
 > streamlit run langchain_poc/examples/streamlit/<module_name>.py
+
+### LangChain Example Code
+
+To run LangChain code examples chose desire example in langchain_poc/app.py module and run next command.
+> python3 langchain_poc/app.py
