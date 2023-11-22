@@ -25,3 +25,8 @@ Proof of concept of using LangChain
 > - poetry install
 
 4. Create **.env** file from ****[example.local.env](example.local.env)**** and place it on the same level. Populate **OPENAI_API_KEY** variable.
+
+
+## Run Streamlit Example App
+To run Streamlit example app create run next command.
+> streamlit run langchain_poc/examples/streamlit/<module_name>.py
