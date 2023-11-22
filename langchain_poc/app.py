@@ -1,8 +1,8 @@
 from langchain.chat_models import ChatOpenAI
 
 from langchain_poc.config import get_openai_settings
-from langchain_poc.examples.langchain.chains import ChainsExample
-from langchain_poc.examples.langchain.chains import SequentialChainExample
+from langchain_poc.examples.langchain.chains.chains import ChainsExample
+from langchain_poc.examples.langchain.chains.chains_story import SequentialChainExample
 from langchain_poc.examples.langchain.intro_chat_prompts import IntroChatPrompts
 from langchain_poc.examples.langchain.lang_parser import LangParser
 from langchain_poc.examples.langchain.memory import BufferMemoryExample
