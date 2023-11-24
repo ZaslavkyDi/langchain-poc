@@ -8,6 +8,7 @@ Proof of concept of using LangChain
 - langchain
 - openai
 - streamlit
+- pypdf
 
 ## Project Setup
 

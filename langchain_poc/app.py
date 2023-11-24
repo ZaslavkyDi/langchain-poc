@@ -7,6 +7,7 @@ from langchain_poc.examples.langchain.chains.sequential_chain import SequentialC
 from langchain_poc.examples.langchain.intro_chat_prompts import IntroChatPrompts
 from langchain_poc.examples.langchain.lang_parser import LangParser
 from langchain_poc.examples.langchain.memory import BufferMemoryExample
+from langchain_poc.examples.langchain.pdf_loader import SimplePdfLoaderExample
 
 llm_model: str = "gpt-3.5-turbo"
 chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=llm_model)
@@ -36,8 +37,12 @@ def _get_router_chain() -> RouterChainExample:
     return RouterChainExample(chat_model=chat_model)
 
 
+def _get_simple_pdf_loader_example() -> SimplePdfLoaderExample:
+    return SimplePdfLoaderExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_router_chain()
+    example = _get_simple_pdf_loader_example()
     example.run_example()
 
 
