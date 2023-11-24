@@ -8,6 +8,10 @@ from langchain_poc.examples.langchain.intro_chat_prompts import IntroChatPrompts
 from langchain_poc.examples.langchain.lang_parser import LangParser
 from langchain_poc.examples.langchain.memory import BufferMemoryExample
 from langchain_poc.examples.langchain.pdf_loader import SimplePdfLoaderExample
+from langchain_poc.examples.langchain.splitters.text_splitter import TextSplitterExample
+from langchain_poc.examples.langchain.splitters.text_splitter_recursive import (
+    RecursiveTextSplitterExample,
+)
 
 llm_model: str = "gpt-3.5-turbo"
 chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=llm_model)
@@ -41,8 +45,17 @@ def _get_simple_pdf_loader_example() -> SimplePdfLoaderExample:
     return SimplePdfLoaderExample(chat_model=chat_model)
 
 
+def _get_text_splitter_example() -> TextSplitterExample:
+    return TextSplitterExample(chat_model=chat_model)
+
+
+def _get_text_splitter_recursive_example() -> RecursiveTextSplitterExample:
+    # the best text splitter to use
+    return RecursiveTextSplitterExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_simple_pdf_loader_example()
+    example = _get_text_splitter_recursive_example()
     example.run_example()
 
 
