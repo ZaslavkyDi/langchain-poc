@@ -9,6 +9,8 @@ Proof of concept of using LangChain
 - openai
 - streamlit
 - pypdf
+- tiktoken
+- chromadb  <!-- (Vector Embeds Store Database) -->
 
 ## Project Setup
 

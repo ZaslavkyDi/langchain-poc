@@ -12,6 +12,12 @@ from langchain_poc.examples.langchain.splitters.text_splitter import TextSplitte
 from langchain_poc.examples.langchain.splitters.text_splitter_recursive import (
     RecursiveTextSplitterExample,
 )
+from langchain_poc.examples.langchain.vector_embeds.embeds_creating import (
+    EmbedsCreateExample,
+)
+from langchain_poc.examples.langchain.vector_embeds.embeds_storing import (
+    EmbedsStoringExample,
+)
 
 llm_model: str = "gpt-3.5-turbo"
 chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=llm_model)
@@ -54,8 +60,16 @@ def _get_text_splitter_recursive_example() -> RecursiveTextSplitterExample:
     return RecursiveTextSplitterExample(chat_model=chat_model)
 
 
+def _get_vector_embeds_creating_example() -> EmbedsCreateExample:
+    return EmbedsCreateExample(chat_model=chat_model)
+
+
+def _get_vector_embeds_storing_example() -> EmbedsStoringExample:
+    return EmbedsStoringExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_text_splitter_recursive_example()
+    example = _get_vector_embeds_storing_example()
     example.run_example()
 
 
