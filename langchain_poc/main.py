@@ -15,6 +15,7 @@ from langchain_poc.examples.langchain.splitters.text_splitter_recursive import (
 from langchain_poc.examples.langchain.vector_embeds.embeds_creating import (
     EmbedsCreateExample,
 )
+from langchain_poc.examples.langchain.vector_embeds.embeds_retrieval import EmbedsRetrievalExample
 from langchain_poc.examples.langchain.vector_embeds.embeds_storing import (
     EmbedsStoringExample,
 )
@@ -68,8 +69,12 @@ def _get_vector_embeds_storing_example() -> EmbedsStoringExample:
     return EmbedsStoringExample(chat_model=chat_model)
 
 
+def _get_vector_embeds_retrieval_example() -> EmbedsRetrievalExample:
+    return EmbedsRetrievalExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_vector_embeds_storing_example()
+    example = _get_vector_embeds_retrieval_example()
     example.run_example()
 
 
