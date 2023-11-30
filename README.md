@@ -11,6 +11,7 @@ Proof of concept of using LangChain
 - pypdf
 - tiktoken
 - chromadb  <!-- (Vector Embeds Store Database) -->
+- wikipedia <!-- (Docsstore client) -->
 
 ## Project Setup
 

@@ -19,13 +19,13 @@ class ConversationalAgentExample(BaseExample):
         general_tool = self._make_general_question_tool()
         tools = load_tools(
             tool_names=["llm-math"],
-            llm=self.openai_model,
+            llm=self.chat_model,
         )
         tools.append(general_tool)
 
         conversational_agent = initialize_agent(
             tools=tools,
-            llm=self.openai_model,
+            llm=self.chat_model,
             agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
             verbose=True,
             max_iterations=3,
@@ -39,7 +39,7 @@ class ConversationalAgentExample(BaseExample):
             input_variables=["query"],
             template="{query}",
         )
-        general_purpose_chain = LLMChain(llm=self.openai_model, prompt=prompt)
+        general_purpose_chain = LLMChain(llm=self.chat_model, prompt=prompt)
         return Tool(
             name="General Purpose",
             func=general_purpose_chain.run,
