@@ -25,7 +25,9 @@ from langchain_poc.examples.langchain.vector_embeds.embeds_storing import (
 )
 
 LLM_MODEL_GENERATION: str = "gpt-3.5-turbo"
-chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=LLM_MODEL_GENERATION)
+chat_model = ChatOpenAI(
+    temperature=0, api_key=get_openai_settings().api_key, model_name=LLM_MODEL_GENERATION
+)
 
 
 # Prompts & Parsers & Memory

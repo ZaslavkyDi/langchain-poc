@@ -1,9 +1,7 @@
-from langchain.agents import load_tools, initialize_agent, AgentType
+from langchain.agents import AgentType, initialize_agent
 from langchain.agents.react.base import DocstoreExplorer
-from langchain.chains import LLMChain
 from langchain.docstore import Wikipedia
 from langchain.llms.openai import OpenAI
-from langchain.prompts import PromptTemplate
 from langchain.tools import Tool
 
 from langchain_poc.examples.langchain.base import BaseExample
@@ -29,6 +27,8 @@ class DocstoreAgentExample(BaseExample):
             ),
         ]
         llm = OpenAI(temperature=0, model_name="text-davinci-002")  # that LLM works over ChatOpenAI
-        docstore_agent = initialize_agent(tools, llm, agent=AgentType.REACT_DOCSTORE, verbose=True, max_iterations=3)
+        docstore_agent = initialize_agent(
+            tools, llm, agent=AgentType.REACT_DOCSTORE, verbose=True, max_iterations=3
+        )
         result = docstore_agent(self._query)
         print(result)
