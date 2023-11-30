@@ -1,4 +1,4 @@
-from langchain.agents import Agent, initialize_agent, AgentType, AgentExecutor, load_tools
+from langchain.agents import AgentExecutor, AgentType, initialize_agent, load_tools
 from langchain.chains import LLMMathChain
 from langchain.tools import Tool
 
@@ -13,7 +13,7 @@ class SimpleAgentExample(BaseExample):
         incorrect_response = self.chat_model.predict(text=self._math_query)
         print(incorrect_response)
 
-        custom_math_tool = self._create_custom_math_tool()
+        # custom_math_tool = self._create_custom_math_tool()
         # tools = [custom_math_tool] custom tools
         tools = load_tools(
             tool_names=["llm-math"],  # the name you can find in source code

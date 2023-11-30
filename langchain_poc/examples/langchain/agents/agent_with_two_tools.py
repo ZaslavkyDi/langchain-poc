@@ -1,5 +1,5 @@
-from langchain.agents import Agent, initialize_agent, AgentType, AgentExecutor, load_tools
-from langchain.chains import LLMMathChain, LLMChain
+from langchain.agents import AgentExecutor, AgentType, initialize_agent, load_tools
+from langchain.chains import LLMChain
 from langchain.prompts import PromptTemplate
 from langchain.tools import Tool
 
@@ -51,5 +51,5 @@ class AgentWithTwoToolsExample(BaseExample):
         return Tool(
             name="General Purpose",
             func=chain.run,
-            description="Useful for answering general purpose questions and logic."
+            description="Useful for answering general purpose questions and logic.",
         )

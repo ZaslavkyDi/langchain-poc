@@ -2,6 +2,7 @@ from langchain.chat_models import ChatOpenAI
 
 from langchain_poc.config import get_openai_settings
 from langchain_poc.examples.langchain.agents.agent_with_two_tools import AgentWithTwoToolsExample
+from langchain_poc.examples.langchain.agents.conversational_agent import ConversationalAgentExample
 from langchain_poc.examples.langchain.agents.simple_agent import SimpleAgentExample
 from langchain_poc.examples.langchain.chains.chain import ChainsExample
 from langchain_poc.examples.langchain.chains.router_chain import RouterChainExample
@@ -22,10 +23,11 @@ from langchain_poc.examples.langchain.vector_embeds.embeds_storing import (
     EmbedsStoringExample,
 )
 
-llm_model: str = "gpt-3.5-turbo"
-chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=llm_model)
+LLM_MODEL_GENERATION: str = "gpt-3.5-turbo"
+chat_model = ChatOpenAI(temperature=0, api_key=get_openai_settings().api_key, model_name=LLM_MODEL_GENERATION)
 
 
+# Prompts & Parsers & Memory
 def _get_intro_chat_prompts() -> IntroChatPrompts:
     return IntroChatPrompts(chat_model=chat_model)
 
@@ -38,6 +40,7 @@ def _get_memory() -> BufferMemoryExample:
     return BufferMemoryExample(chat_model=chat_model)
 
 
+# Chains
 def _get_chains() -> ChainsExample:
     return ChainsExample(chat_model=chat_model)
 
@@ -50,6 +53,7 @@ def _get_router_chain() -> RouterChainExample:
     return RouterChainExample(chat_model=chat_model)
 
 
+# PDF loader & Text Splitter
 def _get_simple_pdf_loader_example() -> SimplePdfLoaderExample:
     return SimplePdfLoaderExample(chat_model=chat_model)
 
@@ -63,6 +67,7 @@ def _get_text_splitter_recursive_example() -> RecursiveTextSplitterExample:
     return RecursiveTextSplitterExample(chat_model=chat_model)
 
 
+# VectorStore
 def _get_vector_embeds_creating_example() -> EmbedsCreateExample:
     return EmbedsCreateExample(chat_model=chat_model)
 
@@ -75,6 +80,7 @@ def _get_vector_embeds_retrieval_example() -> EmbedsRetrievalExample:
     return EmbedsRetrievalExample(chat_model=chat_model)
 
 
+# Agents & Tools
 def _get_simple_agent_example() -> SimpleAgentExample:
     return SimpleAgentExample(chat_model=chat_model)
 
@@ -83,8 +89,13 @@ def _get_agent_with_2_tools_example() -> AgentWithTwoToolsExample:
     return AgentWithTwoToolsExample(chat_model=chat_model)
 
 
+def _get_conversational_agent_example() -> ConversationalAgentExample:
+    # TODO: return an error message from the first query - need to investigate
+    return ConversationalAgentExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_agent_with_2_tools_example()
+    example = _get_conversational_agent_example()
     example.run_example()
 
 
