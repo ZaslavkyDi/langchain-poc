@@ -1,6 +1,8 @@
 from langchain.chat_models import ChatOpenAI
 
 from langchain_poc.config import get_openai_settings
+from langchain_poc.examples.langchain.agents.agent_with_two_tools import AgentWithTwoToolsExample
+from langchain_poc.examples.langchain.agents.simple_agent import SimpleAgentExample
 from langchain_poc.examples.langchain.chains.chain import ChainsExample
 from langchain_poc.examples.langchain.chains.router_chain import RouterChainExample
 from langchain_poc.examples.langchain.chains.sequential_chain import SequentialChainExample
@@ -73,8 +75,16 @@ def _get_vector_embeds_retrieval_example() -> EmbedsRetrievalExample:
     return EmbedsRetrievalExample(chat_model=chat_model)
 
 
+def _get_simple_agent_example() -> SimpleAgentExample:
+    return SimpleAgentExample(chat_model=chat_model)
+
+
+def _get_agent_with_2_tools_example() -> AgentWithTwoToolsExample:
+    return AgentWithTwoToolsExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_vector_embeds_retrieval_example()
+    example = _get_agent_with_2_tools_example()
     example.run_example()
 
 

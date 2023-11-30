@@ -19,6 +19,7 @@ streamlit = "^1.28.2"
 pypdf = "^3.17.1"
 tiktoken = "^0.5.1"
 chromadb = "^0.4.18"
+numexpr = "^2.8.7"
 
 
 [build-system]
