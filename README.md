@@ -12,6 +12,7 @@ Proof of concept of using LangChain
 - tiktoken
 - chromadb  <!-- (Vector Embeds Store Database) -->
 - wikipedia <!-- (Docsstore client) -->
+- google-search-results <!-- (Self Asked Agent) -->
 
 ## Project Setup
 

@@ -29,7 +29,7 @@ class ConversationalAgentExample(BaseExample):
             agent=AgentType.CONVERSATIONAL_REACT_DESCRIPTION,
             verbose=True,
             max_iterations=3,
-            memory=ConversationBufferMemory(memory_key="chat_history"),
+            memory=ConversationBufferMemory(memory_key="chat_history", return_messages=True),
         )
         conversational_agent.run(self._1st_query)
         conversational_agent.run(self._2nd_query)

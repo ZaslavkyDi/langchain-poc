@@ -4,6 +4,7 @@ from langchain_poc.config import get_openai_settings
 from langchain_poc.examples.langchain.agents.agent_with_two_tools import AgentWithTwoToolsExample
 from langchain_poc.examples.langchain.agents.conversational_agent import ConversationalAgentExample
 from langchain_poc.examples.langchain.agents.docstore_agent import DocstoreAgentExample
+from langchain_poc.examples.langchain.agents.self_ask_agent import SelfAskWithSearchAgentExample
 from langchain_poc.examples.langchain.agents.simple_agent import SimpleAgentExample
 from langchain_poc.examples.langchain.chains.chain import ChainsExample
 from langchain_poc.examples.langchain.chains.router_chain import RouterChainExample
@@ -101,8 +102,12 @@ def _get_docstore_agent_example() -> DocstoreAgentExample:
     return DocstoreAgentExample(chat_model=chat_model)
 
 
+def _get_self_ask_agent_example() -> SelfAskWithSearchAgentExample:
+    return SelfAskWithSearchAgentExample(chat_model=chat_model)
+
+
 def main() -> None:
-    example = _get_docstore_agent_example()
+    example = _get_self_ask_agent_example()
     example.run_example()
 
 
