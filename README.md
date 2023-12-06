@@ -13,6 +13,8 @@ Proof of concept of using LangChain
 - chromadb  <!-- (Vector Embeds Store Database) -->
 - wikipedia <!-- (Docsstore client) -->
 - google-search-results <!-- (Self Asked Agent) -->
+- pgvector
+- psycopg2-binary
 
 ## Project Setup
 

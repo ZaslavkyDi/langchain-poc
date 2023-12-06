@@ -21,6 +21,9 @@ from langchain_poc.examples.langchain.vector_embeds.embeds_creating import (
     EmbedsCreateExample,
 )
 from langchain_poc.examples.langchain.vector_embeds.embeds_retrieval import EmbedsRetrievalExample
+from langchain_poc.examples.langchain.vector_embeds.embeds_retrieval_pgvector import (
+    EmbedsRetrievalPGVectorExample,
+)
 from langchain_poc.examples.langchain.vector_embeds.embeds_storing import (
     EmbedsStoringExample,
 )
@@ -84,6 +87,10 @@ def _get_vector_embeds_retrieval_example() -> EmbedsRetrievalExample:
     return EmbedsRetrievalExample(chat_model=chat_model)
 
 
+def _get_vector_embeds_pgvector_example() -> EmbedsRetrievalPGVectorExample:
+    return EmbedsRetrievalPGVectorExample(chat_model=chat_model)
+
+
 # Agents & Tools
 def _get_simple_agent_example() -> SimpleAgentExample:
     return SimpleAgentExample(chat_model=chat_model)
@@ -107,7 +114,7 @@ def _get_self_ask_agent_example() -> SelfAskWithSearchAgentExample:
 
 
 def main() -> None:
-    example = _get_self_ask_agent_example()
+    example = _get_vector_embeds_pgvector_example()
     example.run_example()
 
 
